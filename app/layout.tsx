@@ -1,7 +1,9 @@
 import './globals.css';
 import type { Metadata } from 'next';
-import { Montserrat } from 'next/font/google';
 import localFont from 'next/font/local';
+import { Inter, Montserrat } from 'next/font/google';
+
+import Navbar from '@/components/Navbar';
 
 const montserrat = Montserrat({
   weight: ['400', '600', '700'],
@@ -15,6 +17,13 @@ const clash_display = localFont({
   src: '../public/fonts/ClashDisplay-Bold.woff2',
   display: 'swap',
   variable: '--font-clash-display',
+});
+
+const inter = Inter({
+  weight: '500',
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-inter',
 });
 
 export const metadata: Metadata = {
@@ -32,7 +41,10 @@ export default function RootLayout({
       lang='en'
       className={`${montserrat.variable} ${clash_display.variable}`}
     >
-      <body>{children}</body>
+      <body className='bg-purple'>
+        <Navbar />
+        {children}
+      </body>
     </html>
   );
 }

@@ -1,6 +1,6 @@
 export default function Home() {
   return (
-    <main className='min-h-screen bg-gradient-to-r from-primary-alt to-primary'>
+    <main className='max-w-screen-2xl'>
       <h1>HELLO WORLD</h1>
     </main>
   );

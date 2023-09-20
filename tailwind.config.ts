@@ -11,6 +11,7 @@ const config: Config = {
       fontFamily: {
         montserrat: ['var(--font-montserrat)'],
         clash: ['var(--font-clash-display)'],
+        inter: ['var(--font-inter)'],
       },
       colors: {
         primary: 'rgb(var(--clr-pry) / 1)',
