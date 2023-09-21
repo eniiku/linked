@@ -1,17 +1,23 @@
 import Image from 'next/image';
 
 import Button from '@/components/Button';
+
+// Hero section imports
 import manMobileImg from '@/public/images/hero/man-mobile.png';
 import manDesktopImg from '@/public/images/hero/man-desktop.png';
 import globeMobileImg from '@/public/images/hero/globe-mobile.png';
 import globeDesktopImg from '@/public/images/hero/globe-desktop.png';
 
+// Overview section imports
+import ideaSmImg from '@/public/images/overview/idea-sm.png';
+import ideaLgImg from '@/public/images/overview/idea-lg.png';
+
 export default function Home() {
   return (
-    <main className='max-w-screen-2xl px-12 lg:px-32'>
+    <main className='text-white'>
       {/* HERO SECTION */}
-      <section className='lg:flex items-end'>
-        <div className='text-white font-montserrat text-center lg:text-left'>
+      <section className='lg:flex items-end relative flare px-12 lg:px-32 max-w-screen-2xl mx-auto'>
+        <div className='font-montserrat text-center lg:text-left'>
           <h3 className='font-bold italic text-base mt-8 lg:text-4xl whitespace-nowrap'>
             Igniting a Revolution in{' '}
             <span className='relative hero_dec'>HR Innovation</span>
@@ -53,6 +59,7 @@ export default function Home() {
               placeholder='blur'
               quality={100}
               className='grayscale'
+              priority
             />
 
             <Image
@@ -71,6 +78,7 @@ export default function Home() {
               placeholder='blur'
               quality={100}
               className='grayscale'
+              priority
             />
 
             <Image
@@ -80,6 +88,47 @@ export default function Home() {
               quality={100}
               className='absolute top-1/2 left-1/2 -translate-y-1/2  -translate-x-1/2'
             />
+          </div>
+        </div>
+      </section>
+
+      {/* OVERVIEW SECTION */}
+      <section className='border-y border-white border-opacity-20'>
+        <div className='lg:flex items-center pt-7 pb-14 lg:py-16 px-12 lg:px-32 max-w-screen-2xl mx-auto '>
+          <div className='relative arrow mb-10 mx-auto'>
+            <Image
+              alt='Picture of a collection of ideas'
+              src={ideaSmImg}
+              placeholder='blur'
+              quality={100}
+              className='md:hidden'
+            />
+
+            <Image
+              alt='Picture of a collection of ideas'
+              src={ideaLgImg}
+              placeholder='blur'
+              quality={100}
+              className='hidden md:block'
+            />
+          </div>
+
+          <div className='text-center lg:text-left'>
+            <h1 className='font-clash font-bold text-xl leading-[133%] lg:text-[32px]'>
+              Introduction to getlinked
+              <br />
+              <span className='text-pink'>tech Hackathon 1.0</span>
+            </h1>
+
+            <p className='font-montserrat leading-[27.5px] text-[13px] mt-2 lg:text-sm lg:max-w-[33rem]'>
+              Our tech hackathon is a melting pot of visionaries, and its
+              purpose is as clear as day: to shape the future. Whether you're a
+              coding genius, a design maverick, or a concept wizard, you'll have
+              the chance to transform your ideas into reality. Solving
+              real-world problems, pushing the boundaries of technology, and
+              creating solutions that can change the world, that's what we're
+              all about!
+            </p>
           </div>
         </div>
       </section>
