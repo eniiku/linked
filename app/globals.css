@@ -40,6 +40,26 @@
   mix-blend-mode: hard-light;
 }
 
+.flare-cri-img::after {
+  content: url('../public/images/hero/hero-flare-top-sm.png');
+  position: absolute;
+  top: -3rem;
+  left: -48px;
+  z-index: -1;
+  opacity: 0.68;
+  mix-blend-mode: hard-light;
+}
+
+.flare-cri::before {
+  content: url('../public/images/criteria/criteria-flare-bot-sm.png');
+  position: absolute;
+  bottom: -3rem;
+  right: 0px;
+  z-index: -1;
+  opacity: 0.68;
+  mix-blend-mode: hard-light;
+}
+
 .arrow::after {
   content: url('../public/images/overview/arrow-sm.png');
   position: absolute;
@@ -67,11 +87,22 @@
     opacity: 0.68;
   }
 
+  .flare-cri-img::after {
+    content: url('../public/images/criteria/criteria-flare-top-lg.png');
+    top: -0.5rem;
+    left: -128px;
+  }
+
+  .flare-cri::before {
+    content: url('../public/images/criteria/criteria-flare-bot-lg.png');
+    bottom: -30rem;
+  }
+
   .flare::before {
     content: url('../public/images/hero/hero-flare-bot-lg.png');
     position: absolute;
     top: 50%;
-    right: -128px;
+    right: 0px;
     z-index: -1;
     opacity: 0.68;
     transform: translateY(-50%);
