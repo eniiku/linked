@@ -12,6 +12,7 @@ const config: Config = {
         montserrat: ['var(--font-montserrat)'],
         clash: ['var(--font-clash-display)'],
         inter: ['var(--font-inter)'],
+        unica: ['var(--font-unica)'],
       },
       colors: {
         primary: 'rgb(var(--clr-pry) / 1)',

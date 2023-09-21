@@ -10,3 +10,60 @@
     --clr-pink: 212 52 254;
   }
 }
+
+/* -----------------------------
+    Custom styling for hero section
+   ----------------------------- */
+
+.hero_dec::after {
+  content: url('../public/svg/hero-dec-sm.svg');
+  position: absolute;
+  bottom: -24px;
+  right: 0;
+  z-index: 1;
+}
+
+.hero_bulb_dec::after {
+  content: url('../public/images/hero/hero-bulb-sm.png');
+  position: absolute;
+  top: -20px;
+  right: 17px;
+  z-index: 1;
+}
+
+.flare::after {
+  content: url('../public/images/hero/hero-flare-top-sm.png');
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -100;
+  opacity: 0.3;
+  mix-blend-mode: hard-light;
+}
+
+@media screen and (min-width: 1280px) {
+  .hero_dec::after {
+    content: url('../public/svg/hero-dec-lg.svg');
+    bottom: -28px;
+  }
+
+  .hero_bulb_dec::after {
+    content: url('../public/images/hero/hero-bulb-lg.png');
+    top: -52px;
+    right: 32px;
+  }
+
+  .flare::after {
+    content: url('../public/images/hero/hero-flare-top-lg.png');
+  }
+
+  .flare::before {
+    content: url('../public/images/hero/hero-flare-bot-lg.png');
+    position: absolute;
+    top: 50%;
+    right: 0;
+    z-index: -100;
+    opacity: 0.4;
+    mix-blend-mode: hard-light;
+  }
+}

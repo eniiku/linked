@@ -9,8 +9,8 @@ const Navbar = () => {
 
   const closeMenu = () => setIsOpen(false);
   return (
-    <nav className='sticky top-0 border-b border-white border-opacity-20'>
-      <div className='max-w-screen-2xl flex items-center justify-between mx-auto px-12 py-7 lg:px-32 lg:pt-16 lg:pb-6'>
+    <nav className='sticky top-0 z-40 border-b border-white border-opacity-20 bg-purple'>
+      <div className='relative flare max-w-screen-2xl flex items-center justify-between mx-auto px-12 py-7 lg:px-32 lg:py-6'>
         <Link href='/' aria-current='page'>
           <h1 className='font-clash text-[15px] font-bold whitespace-nowrap md:text-4xl'>
             <span className='text-white'>get</span>

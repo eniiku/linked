@@ -1,15 +1,14 @@
 import './globals.css';
 import type { Metadata } from 'next';
 import localFont from 'next/font/local';
-import { Inter, Montserrat } from 'next/font/google';
+import { Inter, Montserrat, Unica_One } from 'next/font/google';
 
 import Navbar from '@/components/Navbar';
 
 const montserrat = Montserrat({
-  weight: ['400', '600', '700'],
-  style: ['normal', 'italic'],
   subsets: ['latin'],
-  display: 'swap',
+  // display: 'swap',
+  display: 'block',
   variable: '--font-montserrat',
 });
 
@@ -20,10 +19,16 @@ const clash_display = localFont({
 });
 
 const inter = Inter({
-  weight: '500',
   subsets: ['latin'],
   display: 'swap',
   variable: '--font-inter',
+});
+
+const unica_one = Unica_One({
+  weight: '400',
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-unica',
 });
 
 export const metadata: Metadata = {
@@ -39,7 +44,7 @@ export default function RootLayout({
   return (
     <html
       lang='en'
-      className={`${montserrat.variable} ${clash_display.variable}`}
+      className={`${montserrat.variable} ${clash_display.variable} ${unica_one.variable}`}
     >
       <body className='bg-purple'>
         <Navbar />
