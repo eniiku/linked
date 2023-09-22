@@ -120,10 +120,12 @@ export default function Register() {
             <input
               type='checkbox'
               name='user_consent'
+              aria-describedby='user_consent'
               id=''
               className='bg-purple'
             />
             <label
+              id='user_consent'
               htmlFor='user_consent'
               className='text-[10px] ml-[10px] lg:text-sm'
             >
@@ -143,7 +145,7 @@ export default function Register() {
             <button
               type='submit'
               aria-label='Click to move to contact page'
-              className='mt-5 min-w-full text-white bg-gradient-to-r from-primary-alt to-primary py-4 rounded-[4px] transition-colors duration-150 ease-in hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-purple-600'
+              className='hidden md:block mt-5 min-w-full text-white bg-gradient-to-r from-primary-alt to-primary py-4 rounded-[4px] transition-colors duration-150 ease-in hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-purple-600'
             >
               Register Now
             </button>
