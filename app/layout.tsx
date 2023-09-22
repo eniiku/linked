@@ -45,10 +45,7 @@ export default function RootLayout({
       lang='en'
       className={`${montserrat.variable} ${clash_display.variable} ${unica_one.variable} scroll-smooth`}
     >
-      <body className='bg-purple'>
-        <Navbar />
-        {children}
-      </body>
+      <body className='bg-purple'>{children}</body>
     </html>
   );
 }

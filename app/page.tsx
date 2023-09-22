@@ -1,6 +1,7 @@
 import Image from 'next/image';
 
 import Button from '@/components/Button';
+import Navbar from '@/components/Navbar';
 
 // Hero section imports
 import manMobileImg from '@/public/images/hero/man-mobile.png';
@@ -19,7 +20,10 @@ import criteriaLgImg from '@/public/images/criteria/criteria-lg.png';
 export default function Home() {
   return (
     <main className='text-white'>
+      <Navbar />
+
       {/* HERO SECTION */}
+
       <section className='border-t border-white border-opacity-20'>
         <div className='lg:flex items-end relative flare px-12 lg:px-32 max-w-screen-2xl mx-auto'>
           <div className='font-montserrat text-center lg:text-left'>
