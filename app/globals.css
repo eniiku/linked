@@ -68,6 +68,31 @@
   transform: translateX(-50%);
 }
 
+.custom-grid-alt::before,
+.custom-grid-alt::after {
+  content: '';
+  position: absolute;
+  width: 1rem;
+  height: 14px;
+  background: linear-gradient(
+      rgba(255, 255, 255, 0.02),
+      rgba(255, 255, 255, 0.02)
+    ),
+    rgb(21, 14, 40);
+  border-radius: 999px;
+  pointer-events: none;
+  top: calc(50% + 3px);
+  transform: translateY(-50%);
+}
+
+.custom-grid-alt::before {
+  left: calc(35% + 3px);
+}
+
+.custom-grid-alt::after {
+  right: calc(35% + 3px);
+}
+
 @media screen and (min-width: 1280px) {
   .hero_dec::after {
     content: url('../public/svg/hero-dec-lg.svg');
@@ -113,4 +138,38 @@
     content: url('../public/images/overview/arrow-lg.png');
     left: 100%;
   }
+
+  .custom-grid-alt::before,
+  .custom-grid-alt::after {
+    width: 60px;
+    height: 48px;
+    top: calc(50% +3px);
+    transform: translateY(-50%);
+  }
+
+  .custom-grid-alt::before {
+    left: calc(35% + 6px);
+  }
+
+  .custom-grid-alt::after {
+    right: calc(35% + 9px);
+  }
+}
+
+.custom-grid:nth-child(-n + 3) {
+  border-top: none;
+}
+
+.custom-grid:nth-last-child(-n + 3) {
+  border-bottom: none;
+}
+
+.custom-grid:nth-child(1),
+.custom-grid:nth-child(4) {
+  border-left: none;
+}
+
+.custom-grid:nth-child(3),
+.custom-grid:nth-child(6) {
+  border-right: none;
 }

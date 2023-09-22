@@ -3,10 +3,6 @@ import Link from 'next/link';
 
 import Button from '@/components/Button';
 import Navbar from '@/components/Navbar';
-import xIcon from '@/public/svg/x.svg';
-import facebookIcon from '@/public/svg/facebook.svg';
-import linkedInIcon from '@/public/svg/linkedin.svg';
-import instagramIcon from '@/public/svg/instagram.svg';
 
 // Hero section imports
 import manMobileImg from '@/public/images/hero/man-mobile.png';
@@ -18,9 +14,29 @@ import globeDesktopImg from '@/public/images/hero/globe-desktop.png';
 import ideaSmImg from '@/public/images/overview/idea-sm.png';
 import ideaLgImg from '@/public/images/overview/idea-lg.png';
 
-//Criteria section imports
+// Criteria section imports
 import criteriaSmImg from '@/public/images/criteria/criteria-sm.png';
 import criteriaLgImg from '@/public/images/criteria/criteria-lg.png';
+
+// Partners section imports
+import libertySmLogo from '@/public/images/partners/liberty-logo-sm.png';
+import libertyLgLogo from '@/public/images/partners/liberty-logo-lg.png';
+import paySmLogo from '@/public/images/partners/liberty-pay-logo-sm.png';
+import payLgLogo from '@/public/images/partners/liberty-pay-logo-lg.png';
+import winwiseSmLogo from '@/public/images/partners/winwise-logo-sm.png';
+import winwiseLgLogo from '@/public/images/partners/winwise-logo-lg.png';
+import whispermsSmLogo from '@/public/images/partners/whispersms-logo-sm.png';
+import whispermsLgLogo from '@/public/images/partners/whispersms-logo-lg.png';
+import payboxSmLogo from '@/public/images/partners/paybox-logo-sm.png';
+import payboxLgLogo from '@/public/images/partners/paybox-logo-lg.png';
+import vizualSmLogo from '@/public/images/partners/vizual-logo-sm.png';
+import vizualLgLogo from '@/public/images/partners/vizual-logo-lg.png';
+
+// Footer section imports
+import xIcon from '@/public/svg/x.svg';
+import facebookIcon from '@/public/svg/facebook.svg';
+import linkedInIcon from '@/public/svg/linkedin.svg';
+import instagramIcon from '@/public/svg/instagram.svg';
 
 export default function Home() {
   return (
@@ -227,6 +243,56 @@ export default function Home() {
               Read More
             </button>
           </div>
+        </div>
+      </section>
+
+      {/* PARTNERS SECTION */}
+
+      <section id='criteria' className='bg-white bg-opacity-[0.01]'>
+        <div className='px-12 lg:px-32 max-w-screen-2xl mx-auto pt-10 pb-24 font-montserrat lg:py-32'>
+          <div className='text-center'>
+            <h1 className='font-clash font-bold text-lg lg:text-[2rem]'>
+              Partners and Sponsors
+            </h1>
+            <p className='text-xs leading-[20.5px] lg:text-sm lg:mt-[1.38rem] lg:max-w-[28.25rem] lg:mx-auto'>
+              Getlinked Hackathon 1.0 is honored to have the following major
+              companies as its partners and sponsors
+            </p>
+          </div>
+
+          <ul
+            className='bg-white bg-opacity-[0.01] border-4 lg:border-4 border-pink rounded-md px-12 py-9 grid grid-cols-3 items-center justify-center custom-grid-alt relative mt-10 lg:mt-[4.06rem]
+            lg:py-36 lg:px-44'
+          >
+            {[
+              {
+                sm: libertySmLogo,
+                lg: libertyLgLogo,
+                label: 'Liberty Assured',
+              },
+              { sm: paySmLogo, lg: payLgLogo, label: 'Liberty Pay' },
+              { sm: winwiseSmLogo, lg: winwiseLgLogo, label: 'WinWise' },
+              { sm: whispermsSmLogo, lg: whispermsLgLogo, label: 'Whisperms' },
+              { sm: payboxSmLogo, lg: payboxLgLogo, label: 'Paybox' },
+              {
+                sm: vizualSmLogo,
+                lg: vizualLgLogo,
+                label: 'Vizual Plus Design Studios',
+              },
+            ].map((item) => (
+              <li
+                key={item.label}
+                className='py-[6px] px-6 border h-full border-pink custom-grid lg:py-8 lg:px-12'
+              >
+                <Image src={item.sm} alt={item.label} className='lg:hidden' />
+                <Image
+                  src={item.lg}
+                  alt={item.label}
+                  className='hidden lg:block'
+                />
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
 
