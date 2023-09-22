@@ -1,10 +1,10 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 import instagramIcon from '@/public/svg/instagram.svg';
 import xIcon from '@/public/svg/x.svg';
 import facebookIcon from '@/public/svg/facebook.svg';
 import linkedInIcon from '@/public/svg/linkedin.svg';
-import Image from 'next/image';
 import Navbar from '@/components/Navbar';
 
 export default function Contact() {

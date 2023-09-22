@@ -3,10 +3,8 @@ import type { Metadata } from 'next';
 import localFont from 'next/font/local';
 import { Inter, Montserrat, Unica_One } from 'next/font/google';
 
-import Navbar from '@/components/Navbar';
-
 const montserrat = Montserrat({
-  subsets: ['latin'],
+  subsets: ['latin', 'latin-ext'],
   display: 'swap',
   variable: '--font-montserrat',
 });
@@ -43,7 +41,7 @@ export default function RootLayout({
   return (
     <html
       lang='en'
-      className={`${montserrat.variable} ${clash_display.variable} ${unica_one.variable} scroll-smooth`}
+      className={`${montserrat.variable} ${clash_display.variable} ${inter.variable} ${unica_one.variable} scroll-smooth`}
     >
       <body className='bg-purple'>{children}</body>
     </html>
