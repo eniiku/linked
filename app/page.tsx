@@ -373,7 +373,10 @@ export default function Home() {
 
       {/* Timeline Section */}
 
-      <section id='faq' className='border-t border-white border-opacity-20'>
+      <section
+        id='timeline'
+        className='border-t border-white border-opacity-20'
+      >
         <div className='px-12 lg:px-32 max-w-screen-2xl mx-auto font-montserrat text-white py-20'>
           <div className='text-center mb-14 lg:mb-[5.69rem]'>
             <h1 className='font-clash font-bold text-xl lg:text-[2rem]'>
@@ -422,7 +425,8 @@ export default function Home() {
             ].map((item, index) => (
               <li
                 key={item.title}
-                className='relative text-xs lg:text-2xl border-l-2 border-pink pl-[1.19rem] lg:border-none lg:pl-0 lg:w-full lg:grid grid-cols-2 items-end gap-x-[14.81rem]'
+                className='relative text-xs lg:text-2xl border-l-2 border-pink pl-[1.19rem] lg:border-none lg:pl-0 lg:w-full lg:grid grid-cols-2 items-end gap-x-[14.81rem]
+                lg:odd:order-first'
               >
                 <div className='lg:text-right'>
                   <h2 className='text-pink font-bold'>{item.title}</h2>

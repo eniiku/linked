@@ -60,6 +60,26 @@
   mix-blend-mode: hard-light;
 }
 
+.flare-alt::before,
+.flare-alt::after {
+  position: absolute;
+  z-index: -10;
+  opacity: 0.68;
+  mix-blend-mode: hard-light;
+}
+
+.flare-alt::before {
+  content: url('../public/images/register/register-flare-top-lg.png');
+  top: -0.075rem;
+  left: 0;
+}
+
+.flare-alt::after {
+  content: url('../public/images/register/register-flare-bot-lg.png');
+  bottom: -2rem;
+  right: -2rem;
+}
+
 .arrow::after {
   content: url('../public/images/overview/arrow-sm.png');
   position: absolute;
@@ -173,6 +193,9 @@
     mix-blend-mode: hard-light;
   }
 
+  .flare-alt::before {
+  }
+
   .arrow::after {
     content: url('../public/images/overview/arrow-lg.png');
     left: 100%;
@@ -252,4 +275,52 @@
 .custom-grid:nth-child(3),
 .custom-grid:nth-child(6) {
   border-right: none;
+}
+
+/* Blinking Animation */
+@keyframes blink {
+  0% {
+    opacity: 1;
+    scale: 1;
+  }
+  50% {
+    opacity: 0.3;
+    scale: 0.2;
+  }
+  100% {
+    opacity: 1;
+    scale: 1;
+  }
+}
+
+.blink {
+  animation: blink 2s ease-in-out infinite;
+
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+  }
+}
+
+.animate-delay-75 {
+  animation: blink 2s ease-in-out infinite;
+  animation-delay: 0.75s;
+  -webkit-animation-delay: 0.75s;
+  -o-animation-delay: 0.75s;
+  -moz-animation-delay: 0.75s;
+}
+
+.animate-delay-100 {
+  animation: blink 1s ease-in-out infinite;
+  animation-delay: 1s;
+  -webkit-animation-delay: 1s;
+  -o-animation-delay: 1s;
+  -moz-animation-delay: 1s;
+}
+
+.animate-delay-150 {
+  animation: blink 1s ease-in-out infinite;
+  animation-delay: 1.5s;
+  -webkit-animation-delay: 1.5s;
+  -o-animation-delay: 1.5s;
+  -moz-animation-delay: 1.5s;
 }

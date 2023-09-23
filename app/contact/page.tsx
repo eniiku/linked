@@ -5,16 +5,62 @@ import instagramIcon from '@/public/svg/instagram.svg';
 import xIcon from '@/public/svg/x.svg';
 import facebookIcon from '@/public/svg/facebook.svg';
 import linkedInIcon from '@/public/svg/linkedin.svg';
+
+import starPurpleSm from '@/public/images/shared/star-purple-sm.png';
+import starPurpleLg from '@/public/images/shared/star-purple-lg.png';
+import starGreySm from '@/public/images/shared/star-grey-sm.png';
+import starGreyLg from '@/public/images/shared/star-grey-lg.png';
+import starWhiteSm from '@/public/images/shared/star-white-sm.png';
+import starWhiteLg from '@/public/images/shared/star-white-lg.png';
 import Navbar from '@/components/Navbar';
 
 export default function Contact() {
   return (
-    <main>
+    <main className='relative flare-alt overflow-hidden'>
       <div className='hidden lg:block'>
         <Navbar />
       </div>
 
-      <section className='px-12 lg:px-32 max-w-screen-2xl mx-auto text-white pt-12 pb-9 font-montserrat lg:grid grid-cols-2 lg:items-center lg:py-16'>
+      <section className='px-12 lg:px-32 max-w-screen-2xl mx-auto text-white pt-12 pb-9 font-montserrat lg:grid grid-cols-2 lg:items-center lg:py-16 relative'>
+        {/* Decorative elements */}
+        <span className='absolute bottom-[8.31rem] left-10 blink z-10 lg:left-[12.81rem] lg:top-[3.44rem] lg:bottom-auto'>
+          <Image src={starPurpleSm} alt='' aria-hidden className='md:hidden' />
+          <Image
+            src={starPurpleLg}
+            alt=''
+            aria-hidden
+            className='hidden md:block'
+          />
+        </span>
+
+        <span className='absolute top-[8.62rem] right-[3.56rem] blink animate-delay-100'>
+          <Image src={starGreySm} alt='' aria-hidden className='md:hidden' />
+          <Image
+            src={starGreyLg}
+            alt=''
+            aria-hidden
+            className='hidden md:block'
+          />
+        </span>
+        <span className='absolute top-16 right-[50%] -translate-x-1/2 blink animate-delay-75 lg:hidden'>
+          <Image src={starPurpleSm} alt='' aria-hidden className='md:hidden' />
+          <Image
+            src={starPurpleLg}
+            alt=''
+            aria-hidden
+            className='hidden md:block'
+          />
+        </span>
+        <span className='absolute bottom-[13.12rem] right-[1.69rem] blink animate-delay-150 lg:right-32 lg:bottom-32'>
+          <Image src={starWhiteSm} alt='' aria-hidden className='md:hidden' />
+          <Image
+            src={starWhiteLg}
+            alt=''
+            aria-hidden
+            className='hidden md:block'
+          />
+        </span>
+
         <button className='lg:hidden mb-10'>
           <Link href='/'>
             <svg
@@ -101,7 +147,26 @@ export default function Contact() {
           </div>
         </div>
 
-        <div className='lg:bg-white lg:bg-opacity-5 lg:rounded-xl lg:py-16 lg:px-24 max-w-[620px] w-full'>
+        <div
+          className='lg:bg-white lg:bg-opacity-5 lg:rounded-xl lg:py-16 lg:px-24 max-w-[620px] w-full relative
+        
+        '
+        >
+          <span className='absolute blink animate-delay-75 bottom-[8.31rem] -left-3'>
+            <Image
+              src={starPurpleSm}
+              alt=''
+              aria-hidden
+              className='md:hidden'
+            />
+            <Image
+              src={starPurpleLg}
+              alt=''
+              aria-hidden
+              className='hidden md:block'
+            />
+          </span>
+
           <div className='max-w-[14.75rem] lg:max-w-none'>
             <h1 className='text-pink font-clash text-lg'>
               Questions or need assistance?
