@@ -9,6 +9,10 @@ import manMobileImg from '@/public/images/hero/man-mobile.png';
 import manDesktopImg from '@/public/images/hero/man-desktop.png';
 import globeMobileImg from '@/public/images/hero/globe-mobile.png';
 import globeDesktopImg from '@/public/images/hero/globe-desktop.png';
+import bomb from '@/public/images/hero/bomb.png';
+import bombLg from '@/public/images/hero/bomb-lg.png';
+import chain from '@/public/images/hero/chain.png';
+import chainLg from '@/public/images/hero/chain-lg.png';
 
 // Overview section imports
 import ideaSmImg from '@/public/images/overview/idea-sm.png';
@@ -64,17 +68,45 @@ export default function Home() {
       {/* HERO SECTION */}
 
       <section className='border-t border-white border-opacity-20'>
-        <div className='lg:flex items-end relative flare px-12 lg:px-32 max-w-screen-2xl mx-auto'>
-          <div className='font-montserrat text-center lg:text-left'>
-            <h3 className='font-bold italic text-base mt-8 lg:text-4xl whitespace-nowrap'>
+        <div className='lg:flex items-end relative flare px-12 lg:px-32 max-w-screen-2xl mx-auto overflow-hidden'>
+          <div className='font-montserrat text-center lg:text-left lg:max-w-[50rem]'>
+            <h3 className='font-bold italic text-base mt-8 lg:text-4xl whitespace-nowrap lg:hidden'>
               Igniting a Revolution in{' '}
               <span className='relative hero_dec'>HR Innovation</span>
             </h3>
 
-            <h1 className='font-clash text-[32px] mt-14 lg:text-[80px] leading-[1.15] lg:mt-32'>
+            <h1 className='font-clash text-[32px] mt-14 lg:text-[80px] leading-[1.15] lg:mt-[12.44rem]'>
               getlinked <span className='relative hero_bulb_dec'>Tech</span>{' '}
               Hackathon <span className='text-pink'>1.0</span>
-              🔗💥
+              <span>
+                <Image
+                  src={chain}
+                  alt=''
+                  aria-hidden
+                  className='inline-flex md:hidden'
+                />
+
+                <Image
+                  src={chainLg}
+                  alt=''
+                  aria-hidden
+                  className='hidden md:inline-flex'
+                />
+              </span>
+              <span>
+                <Image
+                  src={bomb}
+                  alt=''
+                  aria-hidden
+                  className='inline-flex md:hidden'
+                />
+                <Image
+                  src={bombLg}
+                  alt=''
+                  aria-hidden
+                  className='hidden md:inline-flex'
+                />
+              </span>
             </h1>
 
             <p className='text-[13px] leading-[166%] mt-2 mb-6 lg:text-xl lg:max-w-[32.625rem] lg:mb-10'>
@@ -119,7 +151,14 @@ export default function Home() {
               />
             </div>
 
-            <div className='relative hidden lg:block'>
+            <div className='absolute hidden lg:block -bottom-4 right-0'>
+              <div>
+                <h3 className='font-bold italic mt-4 text-4xl whitespace-nowrap absolute -top-24 right-20'>
+                  Igniting a Revolution in{' '}
+                  <span className='relative hero_dec'>HR Innovation</span>
+                </h3>
+              </div>
+
               <Image
                 alt='Picture of a man holding a globe'
                 src={manDesktopImg}

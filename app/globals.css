@@ -171,6 +171,16 @@
     opacity: 0.68;
   }
 
+  .flare::before {
+    content: url('../public/images/hero/hero-flare-bot-lg.png');
+    position: absolute;
+    bottom: -1rem;
+    right: -1rem;
+    z-index: 30;
+    opacity: 0.68;
+    mix-blend-mode: hard-light;
+  }
+
   .flare-cri-img::after {
     content: url('../public/images/criteria/criteria-flare-top-lg.png');
     top: -0.5rem;
@@ -180,20 +190,6 @@
   .flare-cri::before {
     content: url('../public/images/criteria/criteria-flare-bot-lg.png');
     bottom: -30rem;
-  }
-
-  .flare::before {
-    content: url('../public/images/hero/hero-flare-bot-lg.png');
-    position: absolute;
-    top: 50%;
-    right: 0px;
-    z-index: -1;
-    opacity: 0.68;
-    transform: translateY(-50%);
-    mix-blend-mode: hard-light;
-  }
-
-  .flare-alt::before {
   }
 
   .arrow::after {
