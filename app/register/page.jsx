@@ -1,11 +1,21 @@
 'use client';
 
 import Image from 'next/image';
+import Link from 'next/link';
 import { useState } from 'react';
 import axios from 'axios';
 
 import heroSmImg from '@/public/images/register/register-sm.png';
 import heroLgImg from '@/public/images/register/register-lg.png';
+import winkImg from '@/public/images/register/wink.png';
+import congratulateSmImg from '@/public/images/register/register-congratulate-sm.png';
+import congratulateLgImg from '@/public/images/register/register-congratulate-lg.png';
+import starPurpleSm from '@/public/images/shared/star-purple-sm.png';
+import starPurpleLg from '@/public/images/shared/star-purple-lg.png';
+import starGreySm from '@/public/images/shared/star-grey-sm.png';
+import starGreyLg from '@/public/images/shared/star-grey-lg.png';
+import starPinkSm from '@/public/images/shared/star-pink-sm.png';
+import starPinkLg from '@/public/images/shared/star-pink-lg.png';
 import Navbar from '@/components/Navbar';
 
 export default function Register() {
@@ -30,6 +40,7 @@ export default function Register() {
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
+    setSignUpSuccess(true);
 
     axios
       .post(
@@ -52,16 +63,110 @@ export default function Register() {
       )
       .then((res) => {
         res.statusText === 'OK'
-          ? console.log(res)
+          ? setSignUpSuccess(true)
           : console.log('There seems to be an error');
       })
       .catch((err) => console.log(err));
   };
   return (
     <main>
+      {signUpSuccess ? (
+        <div className='grid place-items-center bg-[#150E28] bg-opacity-[0.93] fixed inset-0 z-50 h-screen w-full font-montserrat text-white p-9'>
+          <div className='border border-pink rounded-md bg-white bg-opacity-[0.01] px-7 py-5 lg:w-[700px] lg:h-[665px] relative flex flex-col items-center'>
+            {/* Decorative elements */}
+            <span className='absolute -right-1 -top-4 lg:-right-6 lg:-top-8 blink'>
+              <Image
+                src={starPurpleSm}
+                alt=''
+                aria-hidden
+                className='md:hidden'
+              />
+              <Image
+                src={starPurpleLg}
+                alt=''
+                aria-hidden
+                className='hidden md:block'
+              />
+            </span>
+
+            <span className='absolute top-1/3 left-8 blink animate-delay-100 lg:left-20'>
+              <Image
+                src={starGreySm}
+                alt=''
+                aria-hidden
+                className='md:hidden'
+              />
+              <Image
+                src={starGreyLg}
+                alt=''
+                aria-hidden
+                className='hidden md:block'
+              />
+            </span>
+            <span className='absolute -bottom-8 right-4 blink animate-delay-75 lg:bottom-4 lg:right-12'>
+              <Image
+                src={starPinkSm}
+                alt=''
+                aria-hidden
+                className='md:hidden'
+              />
+              <Image
+                src={starPinkLg}
+                alt=''
+                aria-hidden
+                className='hidden md:block'
+              />
+            </span>
+
+            <div className='w-fit mx-auto'>
+              <Image
+                src={congratulateSmImg}
+                alt=''
+                className='md:hidden'
+                quality={100}
+              />
+              <Image
+                src={congratulateLgImg}
+                alt=''
+                className='hidden md:block'
+                quality={100}
+              />
+            </div>
+
+            <div className='text-center'>
+              <h1 className='font-semibold max-w-[11.125rem] mx-auto lg:max-w-none lg:text-[32px]'>
+                Congratulations <br className='hidden lg:block' /> you have
+                successfully Registered!
+              </h1>
+
+              <div className='mb-6 mt-7 text-xs max-w-[13.5rem] mx-auto flex items-end leading-normal lg:font-semibold lg:text-sm lg:max-w-[255px]'>
+                <p>
+                  Yes, it was easy and you did it! check your mail box for next
+                  step
+                </p>
+                <Image
+                  src={winkImg}
+                  alt=''
+                  className='w-[14px] h-[14px] lg:w-5 lg:h-5 mb-[2px]'
+                />
+              </div>
+
+              <Link href='/'>
+                <button
+                  type='submit'
+                  aria-label='Click to move to contact page'
+                  className='lg:mt-5 min-w-full text-white bg-gradient-to-r from-primary-alt to-primary py-4 rounded-[4px] transition-colors duration-150 ease-in hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-purple-600'
+                >
+                  Back
+                </button>
+              </Link>
+            </div>
+          </div>
+        </div>
+      ) : null}
       <Navbar />
 
-      <section className='px-12 lg:px-32 max-w-screen-2xl mx-auto text-white py-6 font-montserrat lg:grid grid-cols-[auto_1fr] lg:items-end lg:py-16'>
+      <section className='px-12 lg:px-32 max-w-screen-2xl mx-auto text-white py-6 font-montserrat lg:grid grid-cols-[auto_1fr] lg:items-end lg:py-16 relative flare-alt overflow-hidden'>
         <h1 className='lg:hidden font-clash font-bold mb-8 text-pink'>
           Register
         </h1>
