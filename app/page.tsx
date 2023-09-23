@@ -14,13 +14,17 @@ import globeDesktopImg from '@/public/images/hero/globe-desktop.png';
 import ideaSmImg from '@/public/images/overview/idea-sm.png';
 import ideaLgImg from '@/public/images/overview/idea-lg.png';
 
+// Rules section imports
+import rulesSmImg from '@/public/images/rules/rules-sm.png';
+import rulesLgImg from '@/public/images/rules/rules-lg.png';
+
 // Criteria section imports
 import criteriaSmImg from '@/public/images/criteria/criteria-sm.png';
 import criteriaLgImg from '@/public/images/criteria/criteria-lg.png';
 
-// Rules section imports
-import rulesSmImg from '@/public/images/rules/rules-sm.png';
-import rulesLgImg from '@/public/images/rules/rules-lg.png';
+// FAQ section imports
+import faqSmImg from '@/public/images/faq/faq-sm.png';
+import faqLgImg from '@/public/images/faq/faq-lg.png';
 
 // Prizes section Imports
 import prizesSmImg from '@/public/images/prizes/prizes-sm.png';
@@ -45,6 +49,7 @@ import xIcon from '@/public/svg/x.svg';
 import facebookIcon from '@/public/svg/facebook.svg';
 import linkedInIcon from '@/public/svg/linkedin.svg';
 import instagramIcon from '@/public/svg/instagram.svg';
+import Accordion from '@/components/Accordion';
 
 export default function Home() {
   return (
@@ -286,6 +291,77 @@ export default function Home() {
             >
               Read More
             </button>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+
+      <section id='faq' className='border-t border-white border-opacity-20'>
+        <div className='lg:flex items-center justify-center gap-x-[1.56rem] px-12 lg:px-32 max-w-screen-2xl mx-auto font-montserrat text-white py-14 lg:pt-[7.63rem]'>
+          <div className='mb-[5.4rem] lg:mb-24'>
+            <h1 className='mb-[0.37rem] text-center lg:text-left font-clash font-bold text-xl lg:text-[2rem] leading-snug lg:mb-4'>
+              Frequently Ask <br />
+              <span className='text-pink'>Question</span>
+            </h1>
+
+            <p className='text-xs text-center lg:text-left leading-[27.5px] mb-[2.56rem] lg:text-sm lg:max-w-[21.375rem] lg:leading-[196%] lg:mb-12'>
+              We got answers to the questions that you might want to ask about{' '}
+              <a href='#overview' className='font-bold'>
+                getlinked Hackathon 1.0
+              </a>
+            </p>
+
+            {/* faq accordion */}
+            <Accordion
+              items={[
+                {
+                  title:
+                    'Can I work on a project I started before the hackathon?',
+                  content: 'Further explanation is unavailable at the moment',
+                },
+                {
+                  title: 'What happens if I need help during the hackathon?',
+                  content: 'Further explanation is unavailable at the moment',
+                },
+                {
+                  title: "What happens if I don't have an idea for a project?",
+                  content: 'Further explanation is unavailable at the moment',
+                },
+                {
+                  title: 'Can I join a team or do I have to come with one?',
+                  content: 'Further explanation is unavailable at the moment',
+                },
+                {
+                  title: 'What happens after the hackathon ends',
+                  content: 'Further explanation is unavailable at the moment',
+                },
+                {
+                  title:
+                    'Can I work on a project I started before the hackathon?',
+                  content: 'Further explanation is unavailable at the moment',
+                },
+              ]}
+            />
+          </div>
+
+          <div className='relative'>
+            {/* Decorative question marks */}
+            <div className='absolute -top-2 left-12 flex gap-12 font-tommy font-medium text-[2rem] lg:text-8xl lg:-top-12 lg:left-[4.5rem] lg:gap-[120px] text-primary'>
+              <span className='text-stroke lg:mt-4'>?</span>
+              <span className='text-stroke-main text-[4rem] -mt-12 lg:text-9xl lg:-mt-6rem text-pink'>
+                ?
+              </span>
+              <span className='text-stroke lg:mt-4'>?</span>
+            </div>
+
+            <Image src={faqSmImg} alt='' quality={100} className='md:hidden' />
+            <Image
+              src={faqLgImg}
+              alt=''
+              quality={100}
+              className='hidden md:block'
+            />
           </div>
         </div>
       </section>

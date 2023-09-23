@@ -33,6 +33,12 @@ export const metadata: Metadata = {
   description: 'A tech hackathon igniting a revolutionin HR innovation',
 };
 
+const tommy_outline = localFont({
+  src: '../public/fonts/tommy-outline-medium.otf',
+  display: 'swap',
+  variable: '--font-tommy',
+});
+
 export default function RootLayout({
   children,
 }: {
@@ -41,7 +47,7 @@ export default function RootLayout({
   return (
     <html
       lang='en'
-      className={`${montserrat.variable} ${clash_display.variable} ${inter.variable} ${unica_one.variable} scroll-smooth`}
+      className={`${montserrat.variable} ${clash_display.variable} ${inter.variable} ${unica_one.variable} ${tommy_outline.variable} scroll-smooth`}
     >
       <body className='bg-purple'>{children}</body>
     </html>

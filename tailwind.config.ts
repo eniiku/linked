@@ -13,6 +13,7 @@ const config: Config = {
         clash: ['var(--font-clash-display)'],
         inter: ['var(--font-inter)'],
         unica: ['var(--font-unica)'],
+        tommy: ['var(--font-tommy)'],
       },
       colors: {
         primary: 'rgb(var(--clr-pry) / 1)',
