@@ -44,6 +44,11 @@ import payboxLgLogo from '@/public/images/partners/paybox-logo-lg.png';
 import vizualSmLogo from '@/public/images/partners/vizual-logo-sm.png';
 import vizualLgLogo from '@/public/images/partners/vizual-logo-lg.png';
 
+// Privacy section imports
+import privacySmImg from '@/public/images/privacy/privacy-sm.png';
+import privacyLgImg from '@/public/images/privacy/privacy-lg.png';
+import checkIcon from '@/public/images/privacy/check.svg';
+
 // Footer section imports
 import xIcon from '@/public/svg/x.svg';
 import facebookIcon from '@/public/svg/facebook.svg';
@@ -366,6 +371,86 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Timeline Section */}
+
+      <section id='faq' className='border-t border-white border-opacity-20'>
+        <div className='px-12 lg:px-32 max-w-screen-2xl mx-auto font-montserrat text-white py-20'>
+          <div className='text-center mb-14 lg:mb-[5.69rem]'>
+            <h1 className='font-clash font-bold text-xl lg:text-[2rem]'>
+              Timeline
+            </h1>
+
+            <p className='leading-[172%] text-sm mt-2 lg:mt-3 lg:max-w-[21.625rem] lg:mx-auto'>
+              Here is the breakdown of the time we anticipate using for the
+              upcoming event.
+            </p>
+          </div>
+
+          <ul className='space-y-10 relative reorder lg:space-y-[5.44rem]'>
+            <li className='center-line'></li>
+            {[
+              {
+                title: 'Hackathon Announcement',
+                content:
+                  'The getlinked tech hackathon 1.0 is formally announced to the general public and teams begin to get ready to register',
+              },
+              {
+                title: 'Teams Registration begins',
+                content:
+                  'Interested teams can now show their interest in the getlinked tech hackathon 1.0 2023 by proceeding to register',
+              },
+              {
+                title: 'Teams Registration ends',
+                content:
+                  'Interested Participants are no longer Allowed to register',
+              },
+              {
+                title: 'Announcement of the accepted teams and ideas',
+                content:
+                  'All teams whom idea has been accepted into getlinked tech hackathon 1.0 2023 are formally announced',
+              },
+              {
+                title: 'Getlinked Hackathon 1.0 Offically Begins',
+                content:
+                  'Accepted teams can now proceed to build their ground breaking skill driven solutions',
+              },
+              {
+                title: 'Demo Day',
+                content:
+                  'Teams get the opportunity to pitch their projects to judges. The winner of the hackathon will also be announced on this day',
+              },
+            ].map((item, index) => (
+              <li
+                key={item.title}
+                className='relative text-xs lg:text-2xl border-l-2 border-pink pl-[1.19rem] lg:border-none lg:pl-0 lg:w-full lg:grid grid-cols-2 items-end gap-x-[14.81rem]'
+              >
+                <div className='lg:text-right'>
+                  <h2 className='text-pink font-bold'>{item.title}</h2>
+
+                  <p className='leading-[170.9%] my-[0.4rem] lg:text-base'>
+                    {item.content}
+                  </p>
+
+                  <time className='text-pink font-bold lg:hidden'>
+                    November 18, 2023
+                  </time>
+                </div>
+
+                <time className='text-pink font-bold hidden lg:grid'>
+                  November 18, 2023
+                </time>
+
+                <span className='absolute -left-[18px] -bottom-[6px] bg-purple p-[6px] center-line-align'>
+                  <span className='w-5 h-5 font-bold bg-gradient-to-l from-primary to-pink rounded-full flex items-center justify-center lg:w-[53px] lg:h-[53px]'>
+                    {index + 1}
+                  </span>
+                </span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
       {/* PRIZES SECTION */}
 
       <section className='relative prizes-mask overflow-hidden'>
@@ -459,7 +544,7 @@ export default function Home() {
           </div>
 
           <ul
-            className='bg-white bg-opacity-[0.01] border-4 lg:border-4 border-pink rounded-md px-12 py-9 grid grid-cols-3 items-center justify-center custom-grid-alt relative mt-10 lg:mt-[4.06rem]
+            className='bg-white bg-opacity-[0.01] border border-pink rounded-md px-12 py-9 grid grid-cols-3 items-center justify-center custom-grid-alt relative mt-10 lg:mt-[4.06rem]
             lg:py-36 lg:px-44'
           >
             {[
@@ -480,7 +565,7 @@ export default function Home() {
             ].map((item) => (
               <li
                 key={item.label}
-                className='py-[6px] px-6 border h-full border-pink custom-grid lg:py-8 lg:px-12'
+                className='py-[6px] px-6 border-2 h-full border-pink custom-grid lg:py-8 lg:px-12'
               >
                 <Image src={item.sm} alt={item.label} className='lg:hidden' />
                 <Image
@@ -491,6 +576,85 @@ export default function Home() {
               </li>
             ))}
           </ul>
+        </div>
+      </section>
+
+      {/* Privacy Section */}
+      <section className='border-t border-white border-opacity-20'>
+        <div className='lg:flex items-center justify-center px-12 lg:px-32 max-w-screen-2xl mx-auto font-montserrat text-white py-20 lg:pt-[10.56rem] lg:pb-40 lg:gap-x-[3.12rem]'>
+          <div className='lg:max-w-[35.6rem]'>
+            <div className='text-center lg:text-left'>
+              <h1 className='font-clash font-bold text-xl lg:text-[2rem] leading-snug'>
+                Privacy Policy and <br />
+                <span className='text-pink'>Terms</span>
+              </h1>
+
+              <p className='text-xs leading-[229.167%] text-opacity-75 lg:text-sm lg:mt-4'>
+                Last updated on September 12, 2023
+              </p>
+            </div>
+
+            <div className='text-xs lg:text-sm'>
+              <h3 className='my-7 text-center leading-[188.4%] lg:text-left lg:max-w-[27.375rem] lg:mt-7 lg:mb-[4.31rem]'>
+                Below are our privacy & policy, which outline a lot of goodies.
+                it’s our aim to always take of our participant
+              </h3>
+
+              <div className='border border-pink bg-[#D9D9D9] bg-opacity-[0.03] px-4 py-11 rounded-[5px] mb-[8.88rem] lg:mb-0 lg:px-[4.5rem] lg:py-14'>
+                <h4 className='text-center leading-[216.4%] lg:text-left'>
+                  At getlinked tech Hackathon 1.0, we value your privacy and are
+                  committed to protecting your personal information. This
+                  Privacy Policy outlines how we collect, use, disclose, and
+                  safeguard your data when you participate in our tech hackathon
+                  event. By participating in our event, you consent to the
+                  practices described in this policy.
+                </h4>
+
+                <h6 className='mt-5 text-pink leading-[216.4%] font-bold lg:mt-6'>
+                  Licensing Policy
+                </h6>
+                <h4 className='font-bold'>
+                  Here are terms of our Standard License:
+                </h4>
+
+                <ul className='space-y-6 my-6'>
+                  {[
+                    'The Standard License grants you a non-exclusive right to navigate and register for our event',
+                    'You are licensed to use the item available at any free source sites, for your project developement',
+                  ].map((item) => (
+                    <li
+                      key={item}
+                      className='flex items-start gap-x-[14px] leading-[175.9%]'
+                    >
+                      <Image
+                        src={checkIcon}
+                        alt=''
+                        aria-hidden
+                        className='mt-[2px]'
+                      />
+                      <p>{item}</p>
+                    </li>
+                  ))}
+                </ul>
+
+                <div className='w-fit mx-auto'>
+                  <button
+                    aria-label='Click to read more about the hackathon'
+                    className='w-[97px] text-[0.75rem] lg:text-base py-2 lg:py-4 lg:w-[172px] font-montserrat text-white bg-gradient-to-r from-primary-alt to-primary rounded-[4px] transition-colors duration-150 ease-in 
+                  
+                  hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-purple-600'
+                  >
+                    Read More
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className='relative privacy-mask'>
+            <Image src={privacySmImg} alt='' className='md:hidden' />
+            <Image src={privacyLgImg} alt='' className='hidden md:block' />
+          </div>
         </div>
       </section>
 

@@ -123,6 +123,15 @@
   inset: 0;
 }
 
+.privacy-mask::before {
+  content: url('../public/images/privacy/mask-sm.svg');
+  position: absolute;
+  top: -6rem;
+  left: 50%;
+  z-index: -1;
+  transform: translateX(-50%);
+}
+
 @media screen and (min-width: 1280px) {
   .hero_dec::after {
     content: url('../public/svg/hero-dec-lg.svg');
@@ -203,6 +212,27 @@
   .prizes-mask::before {
     content: url('../public/images/prizes/prize-mask-lg.png');
     text-align: center;
+  }
+
+  .privacy-mask::before {
+    content: url('../public/images/privacy/mask-lg.svg');
+    top: -12.69rem;
+  }
+
+  .center-line {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 2px;
+    background: #d434fe;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .center-line-align {
+    top: 50%;
+    left: calc(50% - 32px);
+    transform: translateY(-50%);
   }
 }
 
