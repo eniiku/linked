@@ -18,6 +18,10 @@ import ideaLgImg from '@/public/images/overview/idea-lg.png';
 import criteriaSmImg from '@/public/images/criteria/criteria-sm.png';
 import criteriaLgImg from '@/public/images/criteria/criteria-lg.png';
 
+// Rules section imports
+import rulesSmImg from '@/public/images/rules/rules-sm.png';
+import rulesLgImg from '@/public/images/rules/rules-lg.png';
+
 // Prizes section Imports
 import prizesSmImg from '@/public/images/prizes/prizes-sm.png';
 import prizesLgImg from '@/public/images/prizes/prizes-lg.png';
@@ -132,7 +136,7 @@ export default function Home() {
         id='overview'
         className='border-t border-white border-opacity-20'
       >
-        <div className='lg:flex items-center pt-7 pb-14 lg:py-16 px-12 lg:px-32 max-w-screen-2xl mx-auto'>
+        <div className='lg:flex items-center justify-center gap-[6.81rem] pt-7 pb-14 lg:py-16 px-12 lg:px-32 max-w-screen-2xl mx-auto'>
           <div className='relative arrow mb-10'>
             <Image
               alt='Picture of a collection of ideas'
@@ -171,6 +175,42 @@ export default function Home() {
         </div>
       </section>
 
+      {/* RULES SECTION */}
+      <section className='border-t border-white border-opacity-20'>
+        <div className='lg:flex flex-row-reverse items-center px-12 lg:px-32 max-w-screen-2xl mx-auto font-montserrat text-white '>
+          <div className='w-fit mx-auto lg:w-auto lg:m-0'>
+            <Image
+              src={rulesSmImg}
+              alt=''
+              quality={100}
+              className='md:hidden'
+            />
+            <Image
+              src={rulesLgImg}
+              alt=''
+              quality={100}
+              className='hidden md:block'
+            />
+          </div>
+
+          <div className='text-center lg:text-left'>
+            <h1 className='font-clash font-bold text-xl mt-3 mb-2 lg:text-[2rem] leading-snug'>
+              Rules and <br /> <span className='text-pink'>Guidelines</span>
+            </h1>
+
+            <p className='text-[0.8125rem] leading-[211.53%] lg:max-w-[33rem] lg:text-sm lg:mt-1 lg:leading-[196.429%]'>
+              Our tech hackathon is a melting pot of visionaries, and its
+              purpose is as clear as day: to shape the future. Whether you're a
+              coding genius, a design maverick, or a concept wizard, you'll have
+              the chance to transform your ideas into reality. Solving
+              real-world problems, pushing the boundaries of technology, and
+              creating solutions that can change the world, that's what we're
+              all about!
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* CRITERIA SECTION */}
 
       <section
@@ -197,7 +237,7 @@ export default function Home() {
           </div>
 
           <div className='text-center lg:text-left lg:max-w-[35.5rem]'>
-            <h1 className='font-clash text-lg mb-4 lg:text-[2rem] leading-[2.25rem]'>
+            <h1 className='font-clash text-xl mb-4 lg:text-[2rem] leading-[2.25rem]'>
               Judging Criteria
               <br />
               <span className='text-pink'>Key attributes</span>
@@ -255,7 +295,7 @@ export default function Home() {
       <section className='relative prizes-mask overflow-hidden'>
         <div className='px-12 lg:px-32 max-w-screen-2xl mx-auto font-montserrat pt-[4.5rem] pb-[5.5rem] lg:flex lg:gap-8 lg:items-end'>
           <div className='text-center lg:hidden'>
-            <h1 className='font-clash font-bold text-lg'>
+            <h1 className='font-clash font-bold text-xl'>
               Prizes and <br /> <span className='text-pink'>Rewards</span>
             </h1>
 
@@ -333,7 +373,7 @@ export default function Home() {
       <section className='bg-white bg-opacity-[0.01]'>
         <div className='px-12 lg:px-32 max-w-screen-2xl mx-auto pt-10 pb-24 font-montserrat lg:py-32'>
           <div className='text-center'>
-            <h1 className='font-clash font-bold text-lg lg:text-[2rem]'>
+            <h1 className='font-clash font-bold text-xl lg:text-[2rem]'>
               Partners and Sponsors
             </h1>
             <p className='text-xs leading-[20.5px] lg:text-sm lg:mt-[1.38rem] lg:max-w-[28.25rem] lg:mx-auto'>
@@ -383,7 +423,7 @@ export default function Home() {
         <div className='font-montserrat text-white px-12 py-14 lg:px-32 lg:pb-11 lg:pt-16 max-w-screen-2xl mx-auto'>
           <div className='space-y-8 lg:space-y-0 lg:grid grid-cols-4'>
             <div className='text-xs col-span-2 lg:h-full lg:flex lg:flex-col lg:justify-between'>
-              <h1 className='font-clash text-lg font-bold whitespace-nowrap lg:text-3xl'>
+              <h1 className='font-clash text-xl font-bold whitespace-nowrap lg:text-3xl'>
                 get<span className='text-pink'>linked</span>
               </h1>
 
