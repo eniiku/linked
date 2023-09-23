@@ -245,13 +245,33 @@
     width: 2px;
     background: #d434fe;
     left: 50%;
+    bottom: 1.5rem;
     transform: translateX(-50%);
   }
 
   .center-line-align {
     top: 50%;
-    left: calc(50% - 32px);
+    left: calc(50% - 37px);
     transform: translateY(-50%);
+  }
+
+  .direction .direction-rtl:nth-child(odd) {
+    direction: rtl;
+    justify-items: start;
+    align-items: center;
+  }
+
+  .direction .direction-rtl:nth-child(odd) > div {
+    text-align: left;
+  }
+
+  .direction .direction-rtl:nth-child(odd) > h2 {
+    background-color: aliceblue;
+    max-width: 485px;
+  }
+
+  .direction .direction-rtl:nth-child(1) {
+    margin-top: 10rem;
   }
 }
 

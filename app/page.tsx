@@ -428,7 +428,7 @@ export default function Home() {
             </p>
           </div>
 
-          <ul className='space-y-10 relative reorder lg:space-y-[5.44rem]'>
+          <ul className='space-y-10 relative reorder lg:space-y-[5.44rem] direction pt-1'>
             <li className='center-line'></li>
             {[
               {
@@ -464,13 +464,12 @@ export default function Home() {
             ].map((item, index) => (
               <li
                 key={item.title}
-                className='relative text-xs lg:text-2xl border-l-2 border-pink pl-[1.19rem] lg:border-none lg:pl-0 lg:w-full lg:grid grid-cols-2 items-end gap-x-[14.81rem]
-                lg:odd:order-first'
+                className='relative text-xs lg:text-2xl border-l-2 border-pink pl-[1.19rem] lg:border-none lg:pl-0 lg:w-full lg:grid grid-cols-2 items-end gap-x-[14.81rem] direction-rtl'
               >
                 <div className='lg:text-right'>
                   <h2 className='text-pink font-bold'>{item.title}</h2>
 
-                  <p className='leading-[170.9%] my-[0.4rem] lg:text-base'>
+                  <p className='leading-[170.9%] my-[0.4rem] lg:text-base lg:mt-3 lg:mb-0 lg:max-w-[485px]'>
                     {item.content}
                   </p>
 
@@ -483,7 +482,7 @@ export default function Home() {
                   November 18, 2023
                 </time>
 
-                <span className='absolute -left-[18px] -bottom-[6px] bg-purple p-[6px] center-line-align'>
+                <span className='absolute -left-[18px] -bottom-[6px] bg-purple p-[6px] lg:p-[11px] z-10 h-fit center-line-align flex items-center justify-center'>
                   <span className='w-5 h-5 font-bold bg-gradient-to-l from-primary to-pink rounded-full flex items-center justify-center lg:w-[53px] lg:h-[53px]'>
                     {index + 1}
                   </span>
@@ -608,7 +607,7 @@ export default function Home() {
             ].map((item) => (
               <li
                 key={item.label}
-                className='py-[6px] px-6 border-2 h-full border-pink custom-grid lg:py-8 lg:px-12'
+                className='p-2 border lg:border-2 w-full h-full border-pink custom-grid lg:py-8 lg:px-12 flex items-center justify-center'
               >
                 <Image src={item.sm} alt={item.label} className='lg:hidden' />
                 <Image
