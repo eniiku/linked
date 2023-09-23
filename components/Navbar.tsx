@@ -1,10 +1,14 @@
 'use client';
 
 import Link from 'next/link';
-import Button from './Button';
+import { usePathname } from 'next/navigation';
 import { useState } from 'react';
 
+import Button from './Button';
+
 const Navbar = () => {
+  const pathname = usePathname();
+
   const [isOpen, setIsOpen] = useState(false);
 
   const closeMenu = () => setIsOpen(false);
@@ -27,20 +31,33 @@ const Navbar = () => {
               { text: 'FAQs', url: 'faq' },
             ].map((link) => (
               <li key={link.url}>
-                <a href={`#${link.url}`} className='font-montserrat text-white'>
+                <a
+                  href={`/#${link.url}`}
+                  className='font-montserrat text-white nav-link'
+                >
                   {link.text}
                 </a>
               </li>
             ))}
 
             <li>
-              <Link href='/contact' className='font-montserrat text-white'>
+              <Link
+                href='/contact'
+                className={`font-montserrat text-white nav-link ${
+                  pathname.includes('contact') ? 'active-link' : ''
+                }`}
+              >
                 Contact
               </Link>
             </li>
           </ul>
 
-          <Button url='/register'>Register</Button>
+          <Button
+            url='/register'
+            active={pathname.includes('register') ? true : false}
+          >
+            Register
+          </Button>
         </div>
 
         {/* Button to open mobile menu onClick */}
@@ -136,14 +153,21 @@ const Navbar = () => {
                   <button
                     onClick={closeMenu}
                     aria-label='Click to move to contact page'
-                    className='font-inter font-medium text-lg tracking-[-1px] text-white'
+                    className={`font-inter font-medium text-lg tracking-[-1px] text-white' ${
+                      pathname.includes('contact') ? 'active-link' : ''
+                    }`}
                   >
                     <Link href='/contact'>Contact</Link>
                   </button>
                 </li>
 
                 <li className='mt-7'>
-                  <Button url='/register'>Register</Button>
+                  <Button
+                    url='/register'
+                    active={pathname.includes('register') ? true : false}
+                  >
+                    Register
+                  </Button>
                 </li>
               </ul>
             </div>
