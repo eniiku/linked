@@ -1,10 +1,62 @@
+'use client';
+
 import Image from 'next/image';
+import { useState } from 'react';
+import axios from 'axios';
 
 import heroSmImg from '@/public/images/register/register-sm.png';
 import heroLgImg from '@/public/images/register/register-lg.png';
 import Navbar from '@/components/Navbar';
 
 export default function Register() {
+  const [userData, setUserData] = useState({
+    email: '',
+    phone_number: '',
+    team_name: '',
+    group_size: 1,
+    project_topic: '',
+    category: 1,
+    privacy_poclicy_accepted: false,
+  });
+  const [signUpSuccess, setSignUpSuccess] = useState(false);
+
+  const REGISTER_URL = 'https://backend.getlinked.ai/hackathon/register';
+
+  const handleChange = (e) => {
+    const newData = { ...userData };
+    newData[e.target.id] = e.target.value;
+    setUserData(newData);
+  };
+
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+
+    axios
+      .post(
+        REGISTER_URL,
+        {
+          email: userData.email,
+          phone_number: userData.phone_number,
+          team_name: userData.team_name,
+          group_size: userData.group_size,
+          project_topic: userData.project_topic,
+          category: userData.category,
+          privacy_poclicy_accepted: userData.privacy_poclicy_accepted,
+        },
+        {
+          headers: {
+            'Access-Control-Allow-Origin': '*',
+            'Content-Type': 'application/json',
+          },
+        }
+      )
+      .then((res) => {
+        res.statusText === 'OK'
+          ? console.log(res)
+          : console.log('There seems to be an error');
+      })
+      .catch((err) => console.log(err));
+  };
   return (
     <main>
       <Navbar />
@@ -45,32 +97,40 @@ export default function Register() {
             </h3>
           </div>
 
-          <form action='' method='post' className='mt-6 lg:mt-8'>
+          <form
+            onSubmit={(e) => handleFormSubmit(e)}
+            method='post'
+            className='mt-6 lg:mt-8'
+          >
             <ul className='space-y-4 lg:space-y-0 lg:grid lg:grid-cols-2 lg:gap-y-7 lg:gap-x-8 lg:items-center'>
               {[
                 {
                   label: "Team's name",
                   placeholder: 'Enter the name of your group',
-                  id: 'user_team',
+                  id: 'team_name',
                   type: 'text',
+                  value: userData.team_name,
                 },
                 {
                   label: 'Phone',
                   placeholder: 'Enter your phone number',
-                  id: 'user_phone',
+                  id: 'phone_number',
                   type: 'number',
+                  value: userData.phone_number,
                 },
                 {
                   label: 'Email',
                   placeholder: 'Enter your email address',
-                  id: 'user_email',
+                  id: 'email',
                   type: 'email',
+                  value: userData.email,
                 },
                 {
                   label: 'Project Topic',
                   placeholder: 'What is your group project topic',
-                  id: 'user_project',
+                  id: 'project_topic',
                   type: 'text',
+                  value: userData.project_topic,
                 },
               ].map((item) => (
                 <li key={item.id} className='text-[13px] lg:text-[14px]'>
@@ -84,6 +144,8 @@ export default function Register() {
                     id={item.id}
                     placeholder={item.placeholder}
                     required
+                    onChange={(e) => handleChange(e)}
+                    value={item.value}
                     className='block w-full bg-white bg-opacity-5 border border-white rounded-[4px] py-3 pl-6 lg:px-6 placeholder:text-white placeholder:text-opacity-25'
                   />
                 </li>
@@ -94,12 +156,14 @@ export default function Register() {
                   {
                     label: 'Category',
                     placeholder: 'Select your category',
-                    id: 'user_category',
+                    id: 'category',
+                    value: userData.category,
                   },
                   {
                     label: 'Group Size',
                     placeholder: 'Select',
                     id: 'user_team_size',
+                    value: userData.group_size,
                   },
                 ].map((item) => (
                   <div key={item.id} className='text-[13px] lg:text-[14px]'>
@@ -108,8 +172,10 @@ export default function Register() {
                     </label>
                     <select
                       name={item.id}
-                      required
+                      id={item.id}
+                      value={item.value}
                       className='block w-full bg-white bg-opacity-5 border border-white rounded-[4px] py-3 px-[10px] lg:px-6 placeholder:text-white placeholder:text-opacity-25'
+                      onChange={(e) => handleChange(e)}
                     >
                       <option value='uno'>{item.placeholder}</option>
                     </select>
@@ -125,14 +191,15 @@ export default function Register() {
             <div className='flex items-start lg:items-center mt-3'>
               <input
                 type='checkbox'
-                name='user_consent'
-                aria-describedby='user_consent'
-                id=''
+                name='privacy_poclicy_accepted'
+                aria-describedby='privacy_poclicy_accepted'
+                id='privacy_poclicy_accepted'
                 className='bg-purple'
+                value='privacy_poclicy_accepted'
+                onChange={(e) => handleChange(e)}
               />
               <label
-                id='user_consent'
-                htmlFor='user_consent'
+                htmlFor='privacy_poclicy_accepted'
                 className='text-[10px] ml-[10px] lg:text-sm'
               >
                 I agreed with the event terms and conditions and privacy policy
