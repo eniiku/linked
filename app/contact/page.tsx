@@ -174,7 +174,7 @@ export default function Contact() {
                   id='user_message'
                   placeholder='Message'
                   rows={4}
-                  className='block w-full bg-white bg-opacity-5 border border-white rounded-[4px] p-6 font-montserrat placeholder:text-white'
+                  className='block w-full bg-white bg-opacity-5 border border-white rounded-[4px] p-6 font-montserrat placeholder:text-white resize-none'
                 ></textarea>
               </li>
             </ul>

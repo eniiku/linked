@@ -93,6 +93,36 @@
   right: calc(35% + 3px);
 }
 
+.gold-medal::before,
+.silver-medal::before,
+.bronze-medal::before {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.gold-medal::before {
+  content: url('../public/images/prizes/medal-gold-sm.png');
+  top: -5rem;
+}
+
+.silver-medal::before {
+  content: url('../public/images/prizes/medal-silver-sm.png');
+  top: -2.5rem;
+}
+
+.bronze-medal::before {
+  content: url('../public/images/prizes/medal-bronze-sm.png');
+  top: -2.5rem;
+}
+
+.prizes-mask::before {
+  content: url('../public/images/prizes/prize-mask-sm.png');
+  position: absolute;
+  opacity: 0.19;
+  inset: 0;
+}
+
 @media screen and (min-width: 1280px) {
   .hero_dec::after {
     content: url('../public/svg/hero-dec-lg.svg');
@@ -153,6 +183,26 @@
 
   .custom-grid-alt::after {
     right: calc(35% + 9px);
+  }
+
+  .gold-medal::before {
+    content: url('../public/images/prizes/medal-gold-lg.png');
+    top: -11.5rem;
+  }
+
+  .silver-medal::before {
+    content: url('../public/images/prizes/medal-silver-lg.png');
+    top: -5rem;
+  }
+
+  .bronze-medal::before {
+    content: url('../public/images/prizes/medal-bronze-lg.png');
+    top: -5rem;
+  }
+
+  .prizes-mask::before {
+    content: url('../public/images/prizes/prize-mask-lg.png');
+    text-align: center;
   }
 }
 
